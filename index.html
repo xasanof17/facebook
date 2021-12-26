@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <title>Facebook App</title>
+</head>
+
+<body>
+  <section class="main">
+    <header class="header">
+      <a href="#" class="logo"><img src="images/logo.png" alt="logo"></a>
+      <div class="menu-btn"></div>
+      <ul class="header__list">
+        <li class="header__item"><a href="#" class="header__link active">Home</a></li>
+        <li class="header__item"><a href="#" class="header__link">About</a></li>
+        <li class="header__item"><a href="#" class="header__link">Support</a></li>
+        <li class="header__item"><a href="#" class="header__link">Contact</a></li>
+      </ul>
+      <a href="#" class="app">
+        <ion-icon name="download-outline" class="ion-icon"></ion-icon> Download App
+      </a>
+    </header>
+
+    <div class="contentBx">
+      <div class="text">
+        <h2 class="content__title">Facebook</h2>
+        <p class="content__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore numquam itaque eos,
+          nulla ratione, odio
+          velit eveniet, non ad quam hic! Ipsa inventore laborum iure porro sequi impedit, odit omnis.
+        </p>
+        <h4>Download the app</h4>
+        <a href="#" class="btn btn1">
+          <ion-icon name="logo-apple"></ion-icon> App Store
+        </a>
+        <a href="#" class="btn">
+          <ion-icon name="logo-google-playstore"></ion-icon> Google Play
+        </a>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="imgBx">
+        <img src="images/fb1.png" alt="#" class="slides active">
+        <img src="images/fb2.png" alt="#" class="slides">
+        <img src="images/fb3.png" alt="#" class="slides">
+        <img src="images/fb4.png" alt="#" class="slides">
+        <img src="images/fb5.png" alt="#" class="slides">
+      </div>
+    </div>
+
+    <ul class="sci">
+      <li class="sci__list"><a href="#" class="sci__link">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="sci__list"><a href="#" class="sci__link">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="sci__list"><a href="#" class="sci__link">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+  </section>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    
+    //Navigation
+    const menu = document.querySelector('.menu-btn');
+    const header__list = document.querySelector('.header__list');
+    menu.onclick = function () {
+      menu.classList.toggle('active');
+      header__list.classList.toggle('active');
+    }
+
+    // Dots
+    const slides = document.querySelectorAll('.slides');
+    const dots = document.querySelectorAll('.dot');
+
+    function setActive(i) {
+      for (slide of slides)
+        slide.classList.remove('active');
+      slides[i].classList.add('active');
+
+      // add active class in indicator 
+      for (dot of dots)
+        dot.classList.remove('active');
+      dots[i].classList.add('active');
+    }
+
+    for (let j = 0; j < dots.length; j++) {
+      dots[j].addEventListener('click', function () {
+        setActive(j);
+      })
+    }
+  </script>
+</body>
+
+</html>
